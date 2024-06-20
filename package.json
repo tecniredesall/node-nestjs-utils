@@ -1,0 +1,81 @@
+{
+  "name": "@gc-crm/gc-nestjs-utils",
+  "version": "0.2.0",
+  "description": "GrainChain NestJS utilities",
+  "author": "Luis Sanchez <rsanchez@grainchain.io>",
+  "license": "UNLICENSED",
+  "readmeFilename": "README.md",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "*.md"
+  ],
+  "scripts": {
+    "start:dev": "tsc -w",
+    "build": "tsc",
+    "prepare": "npm run build && husky install",
+    "format": "prettier --write \"{src,test}/**/*.ts\"",
+    "lint": "eslint \"src/**/*.ts\" --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "publishConfig": {
+    "registry": "http://nexus.grainchain.io/repository/crm/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.grainchain.io:grainchain-crm/gc-nestjs-utils.git"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^8.0.0"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^8.0.0",
+    "@nestjs/core": "^8.0.0",
+    "@nestjs/platform-express": "^8.0.0",
+    "@nestjs/testing": "8.0.0",
+    "@types/express": "4.16.1",
+    "@types/jest": "24.0.11",
+    "@types/node": "11.13.4",
+    "@types/supertest": "2.0.7",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.2",
+    "jest": "24.7.1",
+    "prettier": "^2.3.2",
+    "supertest": "4.0.2",
+    "ts-jest": "24.0.2",
+    "ts-node": "8.1.0",
+    "tsc-watch": "2.2.1",
+    "tsconfig-paths": "3.8.0",
+    "tslint": "5.16.0",
+    "typescript": "4.3.5"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "@nestjs/passport": "^8.2.1",
+    "@nestjs/swagger": "^5.2.1",
+    "jwks-rsa": "^2.1.0",
+    "passport-headerapikey": "^1.2.2",
+    "passport-jwt": "^4.0.0"
+  }
+}
